@@ -96,6 +96,7 @@ function updateConfig() {
         errorBox.style.display = 'none';
         if (checkBtn) checkBtn.disabled = false;
     }
+  showPSURecommendation();
 }
 
 function formatPrice(price) {
