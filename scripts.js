@@ -305,7 +305,7 @@ function loadPreset(type) {
         case 'powerful': // Мощная ~130 000 ₽
             cpuSelect.value = "4";   // AMD Ryzen 5 5600X - 13 500 ₽
             moboSelect.value = "2";  // Gigabyte B450M - 8 500 ₽
-            gpuSelect.value = "8";   // RTX 4070 - 55 000 ₽
+            gpuSelect.value = "13";   // RTX 4070 - 55 000 ₽
             ramSelect.value = "5";   // 32 GB DDR5 - 12 000 ₽
             if(storageSelect) storageSelect.value = "3";  // 1TB NVMe - 5 500 ₽
             if(coolerSelect) coolerSelect.value = "2";    // Deepcool AK400 - 3 000 ₽
