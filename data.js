@@ -1,22 +1,31 @@
 // --- БАЗА ДАННЫХ КОМПЛЕКТУЮЩИХ ---
 const hardwareDatabase = {
     cpus: [
-        { id: 0, name: "Выберите процессор...", score: 0, price: 0, socket: null },
-        { id: 1, name: "Intel Celeron G5905 (Офис)", score: 10, price: 4500, socket: "LGA1200" },
-        { id: 2, name: "AMD Ryzen 3 3200G (Бюджет)", score: 30, price: 8000, socket: "AM4" },
-        { id: 3, name: "Intel Core i5-12400F (Средний)", score: 60, price: 14000, socket: "LGA1700" },
-        { id: 4, name: "AMD Ryzen 5 5600X (Средний)", score: 65, price: 13500, socket: "AM4" },
-        { id: 5, name: "Intel Core i7-13700K (Мощный)", score: 90, price: 38000, socket: "LGA1700" },
-        { id: 6, name: "AMD Ryzen 9 7950X (Топовый)", score: 120, price: 55000, socket: "AM5" }
-    ],
+    { id: 0, name: "Выберите процессор...", score: 0, price: 0, socket: null },
+    { id: 1, name: "Intel Celeron G5905 (Офис)", score: 10, price: 4500, socket: "LGA1200" },
+    { id: 2, name: "AMD Ryzen 3 3200G (Бюджет)", score: 30, price: 8000, socket: "AM4" },
+    { id: 3, name: "Intel Core i3-12100F (Бюджет+)", score: 50, price: 9000, socket: "LGA1700" },
+    { id: 4, name: "Intel Core i5-12400F (Средний)", score: 60, price: 14000, socket: "LGA1700" },
+    { id: 5, name: "AMD Ryzen 5 5600X (Средний)", score: 65, price: 13500, socket: "AM4" },
+    { id: 6, name: "AMD Ryzen 5 7600X (Средний+)", score: 80, price: 20000, socket: "AM5" },
+    { id: 7, name: "Intel Core i5-13400F (Средний+)", score: 75, price: 17500, socket: "LGA1700" },
+    { id: 8, name: "Intel Core i7-13700K (Мощный)", score: 90, price: 38000, socket: "LGA1700" },
+    { id: 9, name: "AMD Ryzen 7 7800X3D (Игровой топ)", score: 105, price: 35000, socket: "AM5" },
+    { id: 10, name: "AMD Ryzen 9 7950X (Топовый)", score: 120, price: 55000, socket: "AM5" },
+    { id: 11, name: "Intel Core i9-14900K (Топовый)", score: 125, price: 60000, socket: "LGA1700" }
+],
     mobos: [
-        { id: 0, name: "Выберите мат. плату...", price: 0, socket: null, ramType: null },
-        { id: 1, name: "ASUS Prime H510M (LGA1200, DDR4)", price: 7000, socket: "LGA1200", ramType: "DDR4" },
-        { id: 2, name: "Gigabyte B450M (AM4, DDR4)", price: 8500, socket: "AM4", ramType: "DDR4" },
-        { id: 3, name: "MSI PRO B660M (LGA1700, DDR4)", price: 11000, socket: "LGA1700", ramType: "DDR4" },
-        { id: 4, name: "MSI MAG B650 (AM5, DDR5)", price: 18000, socket: "AM5", ramType: "DDR5" },
-        { id: 5, name: "ASUS ROG Strix Z790 (LGA1700, DDR5)", price: 35000, socket: "LGA1700", ramType: "DDR5" }
-    ],
+    { id: 0, name: "Выберите мат. плату...", price: 0, socket: null, ramType: null },
+    { id: 1, name: "ASUS Prime H510M (LGA1200, DDR4)", price: 7000, socket: "LGA1200", ramType: "DDR4" },
+    { id: 2, name: "Gigabyte B450M (AM4, DDR4)", price: 8500, socket: "AM4", ramType: "DDR4" },
+    { id: 3, name: "MSI PRO B660M (LGA1700, DDR4)", price: 11000, socket: "LGA1700", ramType: "DDR4" },
+    { id: 4, name: "ASRock B550M (AM4, DDR4)", price: 9500, socket: "AM4", ramType: "DDR4" },
+    { id: 5, name: "Gigabyte B760M (LGA1700, DDR5)", price: 13000, socket: "LGA1700", ramType: "DDR5" },
+    { id: 6, name: "ASUS TUF B650M (AM5, DDR5)", price: 15000, socket: "AM5", ramType: "DDR5" },
+    { id: 7, name: "MSI MAG B650 (AM5, DDR5)", price: 18000, socket: "AM5", ramType: "DDR5" },
+    { id: 8, name: "ASUS ROG Strix Z790 (LGA1700, DDR5)", price: 35000, socket: "LGA1700", ramType: "DDR5" },
+    { id: 9, name: "Gigabyte X670E Aorus (AM5, DDR5)", price: 32000, socket: "AM5", ramType: "DDR5" }
+],
     gpus: [
     { id: 0, name: "Выберите видеокарту...", score: 0, price: 0 },
     { id: 1, name: "Встроенная графика", score: 10, price: 0 },
