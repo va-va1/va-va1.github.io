@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конфигуратор ПК и Совместимость ПО</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🖥️ Конфигуратор ПК 2025</h1>
+        <p>Соберите ПК, проверьте совместимость деталей и узнайте, что на нем запустится.</p>
+    </header>
+
+    <!-- Панель выбора комплектующих -->
+    <div class="config-panel">
+        <div class="form-group">
+            <label for="cpu">Процессор (CPU):</label>
+            <select id="cpu" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-cpu">0 ₽</span>
+        </div>
+
+        <div class="form-group">
+            <label for="mobo">Материнская плата:</label>
+            <select id="mobo" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-mobo">0 ₽</span>
+        </div>
+
+        <div class="form-group">
+            <label for="gpu">Видеокарта (GPU):</label>
+            <select id="gpu" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-gpu">0 ₽</span>
+        </div>
+
+        <div class="form-group">
+            <label for="ram">ОЗУ (RAM):</label>
+            <select id="ram" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-ram">0 ₽</span>
+        </div>
+
+        <div class="form-group">
+            <label for="storage">💽 Накопитель:</label>
+            <select id="storage" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-storage">0 ₽</span>
+        </div>
+
+        <div class="form-group">
+            <label for="cooler">❄️ Охлаждение CPU:</label>
+            <select id="cooler" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-cooler">0 ₽</span>
+        </div>
+
+        <div class="form-group">
+            <label for="psu">⚡ Блок питания:</label>
+            <select id="psu" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-psu">0 ₽</span>
+        </div>
+
+        <div class="form-group">
+            <label for="case">🖥️ Корпус:</label>
+            <select id="case" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-case">0 ₽</span>
+        </div>
+
+        <div class="form-group">
+            <label for="os">Операционная система:</label>
+            <select id="os" onchange="updateConfig()"></select>
+            <span class="price-tag" id="price-os">0 ₽</span>
+        </div>
+
+        <div class="total-price-container">
+            Итоговая стоимость: <span id="total-price">0 ₽</span>
+        </div>
+
+        <div id="hardware-errors" class="error-box" style="display: none;"></div>
+
+        <div class="btn-container">
+            <button id="check-btn" onclick="checkSoftwareCompatibility()">🔍 Найти совместимое ПО</button>
+            <button onclick="loadPreset('budget')" class="btn-preset">💰 Бюджетный</button>
+            <button onclick="loadPreset('medium')" class="btn-preset">⭐ Средний</button>
+            <button onclick="loadPreset('powerful')" class="btn-preset">🔥 Мощный</button>
+            <button onclick="loadPreset('workstation')" class="btn-preset">⚙️ Рабочая станция</button>
+        </div>
+    </div>
+
+    <!-- Таблица с информацией о сборках и кнопками -->
+<div class="info-table" style="background: #f0f4f8; border-radius: 12px; padding: 20px; margin: 20px 0;">
+    <h3 style="margin-top: 0; color: #1e293b; font-weight: 700;">📊 Готовые сборки и их возможности:</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #333;">
+            <div style="font-size: 24px; margin-bottom: 8px;">💰</div>
+            <strong style="font-size: 18px; color: #1e293b;">Бюджетная (до 40к)</strong>
+            <hr style="margin: 10px 0; border-color: #ddd;">
+            ✅ Офис, браузер, учёба<br>
+            ✅ YouTube, фильмы<br>
+            ✅ CS2, Dota 2 (средние)<br>
+            ✅ Программирование (базовое)
+            <button onclick="loadPreset('budget'); setTimeout(() => showAllCompatible(), 300);" class="btn-show-all" style="margin-top: 12px; width: 100%; padding: 8px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer;">📋 Показать всё ПО</button>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #333;">
+            <div style="font-size: 24px; margin-bottom: 8px;">⭐</div>
+            <strong style="font-size: 18px; color: #1e293b;">Средняя (до 80к)</strong>
+            <hr style="margin: 10px 0; border-color: #ddd;">
+            ✅ Любые игры (высокие)<br>
+            ✅ Стриминг<br>
+            ✅ Photoshop, Figma<br>
+            ✅ Программирование (комфортно)
+            <button onclick="loadPreset('medium'); setTimeout(() => showAllCompatible(), 300);" class="btn-show-all" style="margin-top: 12px; width: 100%; padding: 8px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer;">📋 Показать всё ПО</button>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #333;">
+            <div style="font-size: 24px; margin-bottom: 8px;">🔥</div>
+            <strong style="font-size: 18px; color: #1e293b;">Мощная (до 150к)</strong>
+            <hr style="margin: 10px 0; border-color: #ddd;">
+            ✅ Киберспорт (ультра)<br>
+            ✅ Видеомонтаж (Premiere)<br>
+            ✅ 3D моделирование (Blender)<br>
+            ✅ AutoCAD, Unity
+            <button onclick="loadPreset('powerful'); setTimeout(() => showAllCompatible(), 300);" class="btn-show-all" style="margin-top: 12px; width: 100%; padding: 8px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer;">📋 Показать всё ПО</button>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #333;">
+            <div style="font-size: 24px; margin-bottom: 8px;">⚙️</div>
+            <strong style="font-size: 18px; color: #1e293b;">Рабочая станция</strong>
+            <hr style="margin: 10px 0; border-color: #ddd;">
+            ✅ Тяжелый 3D (Maya, 3ds Max)<br>
+            ✅ Научные расчеты<br>
+            ✅ ИИ/машинное обучение<br>
+            ✅ Профессиональный монтаж
+            <button onclick="loadPreset('workstation'); setTimeout(() => showAllCompatible(), 300);" class="btn-show-all" style="margin-top: 12px; width: 100%; padding: 8px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer;">📋 Показать всё ПО</button>
+        </div>
+        
+    </div>
+</div>
+
+    <!-- Блок поиска -->
+    <div id="search-wrapper" class="search-container" style="display: none;">
+        <input type="text" id="searchInput" placeholder="🔎 Поиск программы по названию..." oninput="filterResults()">
+    </div>
+
+    <!-- Область результатов -->
+    <div id="results" class="results-area"></div>
+
+    <!-- Кнопка показать еще -->
+    <div id="show-more-container" class="btn-container" style="display: none; margin-top: 20px;">
+        <button class="btn-secondary" onclick="showAllResults()">Показать всё</button>
+    </div>
+</div>
+
+<script src="data.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
