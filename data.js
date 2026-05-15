@@ -58,15 +58,19 @@ const hardwareDatabase = {
 ],
     rams: [
     { id: 0, name: "Выберите память...", size: 0, price: 0, type: null },
-    { id: 1, name: "Samsung 8 GB DDR4", size: 8, price: 2500, type: "DDR4" },
-    { id: 2, name: "Kingston Fury 16 GB DDR4", size: 16, price: 5000, type: "DDR4" },
-    { id: 3, name: "Corsair Vengeance 16 GB DDR4", size: 16, price: 4800, type: "DDR4" },
-    { id: 4, name: "G.Skill Ripjaws 32 GB DDR4", size: 32, price: 9000, type: "DDR4" },
-    { id: 5, name: "Crucial Ballistix 32 GB DDR4", size: 32, price: 8800, type: "DDR4" },
-    { id: 6, name: "Corsair Vengeance 16 GB DDR5", size: 16, price: 7000, type: "DDR5" },
-    { id: 7, name: "Kingston Fury 32 GB DDR5", size: 32, price: 13500, type: "DDR5" },
-    { id: 8, name: "G.Skill Trident 32 GB DDR5", size: 32, price: 14000, type: "DDR5" },
-    { id: 9, name: "Corsair Dominator 64 GB DDR5", size: 64, price: 26000, type: "DDR5" }
+    
+    // DDR4
+    { id: 1, name: "Samsung 8 GB DDR4", size: 8, price: 2800, type: "DDR4" },
+    { id: 2, name: "Kingston Fury 16 GB DDR4", size: 16, price: 5200, type: "DDR4" },
+    { id: 3, name: "Corsair Vengeance 16 GB DDR4", size: 16, price: 5000, type: "DDR4" },
+    { id: 4, name: "G.Skill Ripjaws 32 GB DDR4", size: 32, price: 9500, type: "DDR4" },
+    
+    // DDR5
+    { id: 5, name: "Corsair Vengeance 32 GB DDR5-5600", size: 32, price: 18500, type: "DDR5" },
+    { id: 6, name: "Kingston Fury 32 GB DDR5-5600 RGB", size: 32, price: 22000, type: "DDR5" },
+    { id: 7, name: "G.Skill Trident Z5 32 GB DDR5-6000", size: 32, price: 25145, type: "DDR5" },
+    { id: 8, name: "Corsair Dominator 64 GB DDR5", size: 64, price: 55000, type: "DDR5" },
+    { id: 9, name: "Kingston Fury 64 GB DDR5", size: 64, price: 53000, type: "DDR5" }
 ],
     storage: [
         { id: 0, name: "Выберите накопитель...", size: 0, price: 0, type: null },
