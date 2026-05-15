@@ -18,14 +18,35 @@ const hardwareDatabase = {
         { id: 5, name: "ASUS ROG Strix Z790 (LGA1700, DDR5)", price: 35000, socket: "LGA1700", ramType: "DDR5" }
     ],
     gpus: [
-        { id: 0, name: "Выберите видеокарту...", score: 0, price: 0 },
-        { id: 1, name: "Встроенная графика", score: 10, price: 0 },
-        { id: 2, name: "NVIDIA GTX 1650", score: 30, price: 15000 },
-        { id: 3, name: "AMD Radeon RX 6600", score: 60, price: 24000 },
-        { id: 4, name: "NVIDIA RTX 4060", score: 70, price: 32000 },
-        { id: 5, name: "NVIDIA RTX 4070 Ti", score: 95, price: 85000 },
-        { id: 6, name: "NVIDIA RTX 4090", score: 120, price: 200000 }
-    ],
+    { id: 0, name: "Выберите видеокарту...", score: 0, price: 0 },
+    { id: 1, name: "Встроенная графика", score: 10, price: 0 },
+    
+    // До 20 000 ₽
+    { id: 2, name: "NVIDIA GTX 1650", score: 30, price: 15000 },
+    
+    // 20 000 - 40 000 ₽
+    { id: 3, name: "AMD Radeon RX 6600", score: 60, price: 24000 },
+    { id: 4, name: "NVIDIA RTX 3060", score: 65, price: 28000 },
+    { id: 5, name: "NVIDIA RTX 4060", score: 70, price: 32000 },
+    { id: 6, name: "AMD Radeon RX 6700 XT", score: 75, price: 35000 },
+    
+    // 40 000 - 60 000 ₽
+    { id: 7, name: "NVIDIA RTX 5060 (2026)", score: 85, price: 47000 },
+    { id: 8, name: "NVIDIA RTX 4070", score: 90, price: 55000 },
+    { id: 9, name: "AMD Radeon RX 7800 XT", score: 95, price: 55000 },
+    
+    // 60 000 - 100 000 ₽
+    { id: 10, name: "NVIDIA RTX 5070 (2026)", score: 105, price: 65000 },
+    { id: 11, name: "NVIDIA RTX 4070 Ti", score: 95, price: 85000 },
+    { id: 12, name: "AMD Radeon RX 7900 XTX", score: 130, price: 100000 },
+    
+    // 100 000 - 200 000 ₽
+    { id: 13, name: "NVIDIA RTX 4080 Super", score: 120, price: 120000 },
+    { id: 14, name: "NVIDIA RTX 4090", score: 135, price: 200000 },
+    
+    // 200 000+ ₽
+    { id: 15, name: "NVIDIA RTX 5090 (2026)", score: 160, price: 300000 }
+],
     rams: [
     { id: 0, name: "Выберите память...", size: 0, price: 0, type: null },
     { id: 1, name: "Samsung 8 GB DDR4", size: 8, price: 2500, type: "DDR4" },
