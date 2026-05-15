@@ -92,7 +92,14 @@ function updateConfig() {
             errors.push(`❌ Несовместимость: Плата поддерживает ${mobo.ramType}, а выбрана память ${ram.type}.`);
         }
     }
-
+// Проверка мощности БП
+    if (psu.id !== 0 && psu.wattage) {
+        const { recommended } = calculateRecommendedPSU();
+        if (psu.wattage < recommended) {
+            errors.push(`⚠️ Блок питания ${psu.name} (${psu.wattage}W) может быть недостаточным! Рекомендуется ${recommended}W.`);
+            errors.push(`💡 Совет: Выберите БП мощностью от ${recommended}W для стабильной работы.`);
+        }
+    }
     if (errors.length > 0) {
         errorBox.style.display = 'block';
         errorBox.innerHTML = errors.join('<br>');
