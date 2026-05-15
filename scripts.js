@@ -278,9 +278,9 @@ function loadPreset(type) {
     const osSelect = document.getElementById('os');
     
     switch(type) {
-        case 'budget': // Бюджетная ~35 000 ₽
-            cpuSelect.value = "2";   // AMD Ryzen 3 3200G - 8 000 ₽
-            moboSelect.value = "2";  // Gigabyte B450M - 8 500 ₽
+        case 'budget': // Бюджетная ~40 000 ₽
+            cpuSelect.value = "2";   // AMD Ryzen 3 3200G (AM4) - 8 000 ₽
+            moboSelect.value = "2";  // Gigabyte B450M (AM4, DDR4) - 8 500 ₽
             gpuSelect.value = "2";   // GTX 1650 - 15 000 ₽
             ramSelect.value = "2";   // 8 GB DDR4 - 2 500 ₽
             if(storageSelect) storageSelect.value = "1";  // 256GB SSD - 2 000 ₽
@@ -290,9 +290,9 @@ function loadPreset(type) {
             osSelect.value = "3";    // Без ОС - 0 ₽
             break;
             
-        case 'medium': // Средняя ~75 000 ₽
-            cpuSelect.value = "3";   // Intel i5-12400F - 14 000 ₽
-            moboSelect.value = "3";  // MSI PRO B660M - 11 000 ₽
+        case 'medium': // Средняя ~80 000 ₽
+            cpuSelect.value = "4";   // Intel Core i5-12400F (LGA1700) - 14 000 ₽
+            moboSelect.value = "3";  // MSI PRO B660M (LGA1700, DDR4) - 11 000 ₽
             gpuSelect.value = "5";   // RTX 4060 - 32 000 ₽
             ramSelect.value = "3";   // 16 GB DDR4 - 4 500 ₽
             if(storageSelect) storageSelect.value = "3";  // 1TB NVMe - 5 500 ₽
@@ -302,10 +302,10 @@ function loadPreset(type) {
             osSelect.value = "3";    // Без ОС - 0 ₽
             break;
             
-        case 'powerful': // Мощная ~130 000 ₽
-            cpuSelect.value = "4";   // AMD Ryzen 5 5600X - 13 500 ₽
-            moboSelect.value = "2";  // Gigabyte B450M - 8 500 ₽
-            gpuSelect.value = "13";   // RTX 4070 - 55 000 ₽
+        case 'powerful': // Мощная ~150 000 ₽
+            cpuSelect.value = "9";   // AMD Ryzen 7 7800X3D (AM5) - 35 000 ₽
+            moboSelect.value = "7";  // MSI MAG B650 (AM5, DDR5) - 18 000 ₽
+            gpuSelect.value = "10";  // RTX 4070 Ti - 85 000 ₽
             ramSelect.value = "5";   // 32 GB DDR5 - 12 000 ₽
             if(storageSelect) storageSelect.value = "3";  // 1TB NVMe - 5 500 ₽
             if(coolerSelect) coolerSelect.value = "2";    // Deepcool AK400 - 3 000 ₽
@@ -314,10 +314,10 @@ function loadPreset(type) {
             osSelect.value = "2";    // Windows 11 Home - 14 000 ₽
             break;
             
-        case 'workstation': // Рабочая станция ~300 000 ₽
-            cpuSelect.value = "6";   // AMD Ryzen 9 7950X - 55 000 ₽
-            moboSelect.value = "4";  // MSI MAG B650 - 18 000 ₽
-            gpuSelect.value = "15";  // RTX 4090 - 200 000 ₽
+        case 'workstation': // Рабочая станция ~350 000 ₽
+            cpuSelect.value = "10";  // AMD Ryzen 9 7950X (AM5) - 55 000 ₽
+            moboSelect.value = "9";  // Gigabyte X670E Aorus (AM5, DDR5) - 32 000 ₽
+            gpuSelect.value = "14";  // RTX 4090 - 200 000 ₽
             ramSelect.value = "6";   // 64 GB DDR5 - 25 000 ₽
             if(storageSelect) storageSelect.value = "4";  // 2TB NVMe - 10 000 ₽
             if(coolerSelect) coolerSelect.value = "3";    // Noctua NH-D15 - 9 000 ₽
@@ -330,7 +330,6 @@ function loadPreset(type) {
     updateConfig();
     showPresetMessage(type);
 }
-
 function showPresetMessage(type) {
     const messages = {
         budget: '💰 Бюджетная сборка загружена! Хватит для офиса, учёбы, CS2, Dota 2.',
