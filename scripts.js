@@ -466,4 +466,72 @@ function removeHiddenLimit() {
     `;
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 2000);
-}  
+}
+
+// --- РАСЧЁТ РЕКОМЕНДУЕМОЙ МОЩНОСТИ БП ---
+function calculateRecommendedPSU() {
+    const cpu = hardwareDatabase.cpus[document.getElementById('cpu').value];
+    const gpu = hardwareDatabase.gpus[document.getElementById('gpu').value];
+    
+    let basePower = 50;
+    
+    let cpuPower = 0;
+    if (cpu.name.includes("Celeron")) cpuPower = 50;
+    else if (cpu.name.includes("Ryzen 3")) cpuPower = 65;
+    else if (cpu.name.includes("i5") || cpu.name.includes("Ryzen 5")) cpuPower = 100;
+    else if (cpu.name.includes("i7") || cpu.name.includes("Ryzen 7")) cpuPower = 150;
+    else if (cpu.name.includes("i9") || cpu.name.includes("Ryzen 9")) cpuPower = 200;
+    else cpuPower = 65;
+    
+    let gpuPower = gpu.powerDraw || 150;
+    if (gpu.name.includes("GTX 1650")) gpuPower = 75;
+    else if (gpu.name.includes("RTX 3060")) gpuPower = 170;
+    else if (gpu.name.includes("RTX 4060")) gpuPower = 115;
+    else if (gpu.name.includes("RTX 4070")) gpuPower = 200;
+    else if (gpu.name.includes("RTX 4080")) gpuPower = 320;
+    else if (gpu.name.includes("RTX 4090")) gpuPower = 450;
+    else if (gpu.name.includes("RTX 5060")) gpuPower = 150;
+    else if (gpu.name.includes("RTX 5070")) gpuPower = 220;
+    else if (gpu.name.includes("RTX 5090")) gpuPower = 575;
+    else if (gpu.name.includes("RX 6600")) gpuPower = 130;
+    else if (gpu.name.includes("RX 6700")) gpuPower = 200;
+    else if (gpu.name.includes("RX 7900")) gpuPower = 350;
+    
+    const totalPower = basePower + cpuPower + gpuPower;
+    
+    let recommended = Math.ceil(totalPower * 1.2);
+    
+    if (recommended <= 450) recommended = 450;
+    else if (recommended <= 550) recommended = 550;
+    else if (recommended <= 650) recommended = 650;
+    else if (recommended <= 750) recommended = 750;
+    else if (recommended <= 850) recommended = 850;
+    else if (recommended <= 1000) recommended = 1000;
+    else recommended = 1200;
+    
+    return { totalPower, recommended };
+}
+
+// --- ПОКАЗАТЬ РЕКОМЕНДАЦИЮ ПО БП ---
+function showPSURecommendation() {
+    const { totalPower, recommended } = calculateRecommendedPSU();
+    const psuWarning = document.getElementById('psu-warning');
+    
+    if (!psuWarning) {
+        const errorBox = document.getElementById('hardware-errors');
+        const newWarning = document.createElement('div');
+        newWarning.id = 'psu-warning';
+        newWarning.className = 'warning-box';
+        newWarning.style.cssText = 'margin-top: 10px; padding: 10px; border-radius: 8px;';
+        errorBox.parentNode.insertBefore(newWarning, errorBox.nextSibling);
+    }
+    
+    const warningBox = document.getElementById('psu-warning');
+    if (warningBox) {
+        warningBox.innerHTML = `
+            ⚡ Рекомендуемая мощность БП: ${recommended}W<br>
+            <small>Расчётное энергопотребление: ~${totalPower}W (с запасом 20%)</small>
+        `;
+        warningBox.style.display = 'block';
+    }
+}
