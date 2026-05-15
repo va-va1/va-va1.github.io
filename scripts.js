@@ -278,49 +278,52 @@ function loadPreset(type) {
     const osSelect = document.getElementById('os');
     
     switch(type) {
-        case 'budget':
-            cpuSelect.value = "2";
-            moboSelect.value = "2";
-            gpuSelect.value = "2";
-            ramSelect.value = "2";
-            if(storageSelect) storageSelect.value = "1";
-            if(coolerSelect) coolerSelect.value = "1";
-            if(psuSelect) psuSelect.value = "1";
-            if(caseSelect) caseSelect.value = "1";
-            osSelect.value = "3";
+        case 'budget': // Бюджетная ~35 000 ₽
+            cpuSelect.value = "2";   // AMD Ryzen 3 3200G - 8 000 ₽
+            moboSelect.value = "2";  // Gigabyte B450M - 8 500 ₽
+            gpuSelect.value = "2";   // GTX 1650 - 15 000 ₽
+            ramSelect.value = "2";   // 8 GB DDR4 - 2 500 ₽
+            if(storageSelect) storageSelect.value = "1";  // 256GB SSD - 2 000 ₽
+            if(coolerSelect) coolerSelect.value = "1";    // Стандартное - 0 ₽
+            if(psuSelect) psuSelect.value = "1";          // 500W - 4 000 ₽
+            if(caseSelect) caseSelect.value = "1";        // Montech X3 Glass - 4 500 ₽
+            osSelect.value = "3";    // Без ОС - 0 ₽
             break;
-        case 'medium':
-            cpuSelect.value = "3";
-            moboSelect.value = "3";
-            gpuSelect.value = "4";
-            ramSelect.value = "3";
-            if(storageSelect) storageSelect.value = "3";
-            if(coolerSelect) coolerSelect.value = "2";
-            if(psuSelect) psuSelect.value = "3";
-            if(caseSelect) caseSelect.value = "2";
-            osSelect.value = "3";
+            
+        case 'medium': // Средняя ~75 000 ₽
+            cpuSelect.value = "3";   // Intel i5-12400F - 14 000 ₽
+            moboSelect.value = "3";  // MSI PRO B660M - 11 000 ₽
+            gpuSelect.value = "5";   // RTX 4060 - 32 000 ₽
+            ramSelect.value = "3";   // 16 GB DDR4 - 4 500 ₽
+            if(storageSelect) storageSelect.value = "3";  // 1TB NVMe - 5 500 ₽
+            if(coolerSelect) coolerSelect.value = "2";    // Deepcool AK400 - 3 000 ₽
+            if(psuSelect) psuSelect.value = "3";          // 750W Gold - 9 000 ₽
+            if(caseSelect) caseSelect.value = "2";        // Montech Air 1000 Lite - 5 500 ₽
+            osSelect.value = "3";    // Без ОС - 0 ₽
             break;
-        case 'powerful':
-            cpuSelect.value = "4";
-            moboSelect.value = "2";
-            gpuSelect.value = "5";
-            ramSelect.value = "3";
-            if(storageSelect) storageSelect.value = "3";
-            if(coolerSelect) coolerSelect.value = "2";
-            if(psuSelect) psuSelect.value = "3";
-            if(caseSelect) caseSelect.value = "3";
-            osSelect.value = "2";
+            
+        case 'powerful': // Мощная ~130 000 ₽
+            cpuSelect.value = "4";   // AMD Ryzen 5 5600X - 13 500 ₽
+            moboSelect.value = "2";  // Gigabyte B450M - 8 500 ₽
+            gpuSelect.value = "8";   // RTX 4070 - 55 000 ₽
+            ramSelect.value = "5";   // 32 GB DDR5 - 12 000 ₽
+            if(storageSelect) storageSelect.value = "3";  // 1TB NVMe - 5 500 ₽
+            if(coolerSelect) coolerSelect.value = "2";    // Deepcool AK400 - 3 000 ₽
+            if(psuSelect) psuSelect.value = "3";          // 750W Gold - 9 000 ₽
+            if(caseSelect) caseSelect.value = "3";        // DEEPCOOL CG530 - 6 000 ₽
+            osSelect.value = "2";    // Windows 11 Home - 14 000 ₽
             break;
-        case 'workstation':
-            cpuSelect.value = "6";
-            moboSelect.value = "4";
-            gpuSelect.value = "6";
-            ramSelect.value = "9";
-            if(storageSelect) storageSelect.value = "4";
-            if(coolerSelect) coolerSelect.value = "3";
-            if(psuSelect) psuSelect.value = "4";
-            if(caseSelect) caseSelect.value = "4";
-            osSelect.value = "4";
+            
+        case 'workstation': // Рабочая станция ~300 000 ₽
+            cpuSelect.value = "6";   // AMD Ryzen 9 7950X - 55 000 ₽
+            moboSelect.value = "4";  // MSI MAG B650 - 18 000 ₽
+            gpuSelect.value = "11";  // RTX 4090 - 200 000 ₽
+            ramSelect.value = "6";   // 64 GB DDR5 - 25 000 ₽
+            if(storageSelect) storageSelect.value = "4";  // 2TB NVMe - 10 000 ₽
+            if(coolerSelect) coolerSelect.value = "3";    // Noctua NH-D15 - 9 000 ₽
+            if(psuSelect) psuSelect.value = "4";          // 850W Gold - 12 000 ₽
+            if(caseSelect) caseSelect.value = "4";        // Montech Sky Two - 8 000 ₽
+            osSelect.value = "2";    // Windows 11 Home - 14 000 ₽
             break;
     }
     
