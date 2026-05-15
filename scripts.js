@@ -107,8 +107,9 @@ function updateConfig() {
     } else {
         errorBox.style.display = 'none';
         if (checkBtn) checkBtn.disabled = false;
-    }
-  showPSURecommendation();
+    } 
+  
+    showPSURecommendation();
 }
 
 function formatPrice(price) {
