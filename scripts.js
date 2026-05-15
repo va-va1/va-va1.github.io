@@ -76,9 +76,14 @@ function updateConfig() {
     const checkBtn = document.getElementById('check-btn');
     let errors = [];
 
+     // Проверка Сокета (CPU <-> Motherboard) - УЛУЧШЕННАЯ
     if (cpu.id !== 0 && mobo.id !== 0) {
         if (cpu.socket !== mobo.socket) {
-            errors.push(`❌ Несовместимость: Процессор (${cpu.socket}) не подходит к плате (${mobo.socket}).`);
+            errors.push(`❌ НЕСОВМЕСТИМОСТЬ: Процессор ${cpu.name} (сокет ${cpu.socket}) НЕ подходит к материнской плате ${mobo.name} (сокет ${mobo.socket}).`);
+            errors.push(`💡 Совет: Выберите материнскую плату с сокетом ${cpu.socket} или процессор с сокетом ${mobo.socket}.`);
+        } else {
+            // Зелёное сообщение о совместимости (опционально)
+            console.log(`✅ Сокет совместим: ${cpu.socket} == ${mobo.socket}`);
         }
     }
 
