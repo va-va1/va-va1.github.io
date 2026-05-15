@@ -317,7 +317,7 @@ function loadPreset(type) {
         case 'workstation': // Рабочая станция ~300 000 ₽
             cpuSelect.value = "6";   // AMD Ryzen 9 7950X - 55 000 ₽
             moboSelect.value = "4";  // MSI MAG B650 - 18 000 ₽
-            gpuSelect.value = "11";  // RTX 4090 - 200 000 ₽
+            gpuSelect.value = "15";  // RTX 4090 - 200 000 ₽
             ramSelect.value = "6";   // 64 GB DDR5 - 25 000 ₽
             if(storageSelect) storageSelect.value = "4";  // 2TB NVMe - 10 000 ₽
             if(coolerSelect) coolerSelect.value = "3";    // Noctua NH-D15 - 9 000 ₽
